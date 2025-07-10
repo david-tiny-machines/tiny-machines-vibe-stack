@@ -1,9 +1,13 @@
+'use client'
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
+import { useAuth } from "@/hooks/useAuth"
 
 export default function Home() {
+  const { isAuthenticated, logout, user } = useAuth()
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -11,13 +15,26 @@ export default function Home() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex justify-between items-center">
             <h1 className="text-2xl font-bold">⚡ Tiny Machines Vibe Stack</h1>
-            <div className="flex gap-2">
-              <Button asChild variant="outline">
-                <Link href="/login">Sign In</Link>
-              </Button>
-              <Button asChild>
-                <Link href="/signup">Sign Up</Link>
-              </Button>
+            <div className="flex gap-2 items-center">
+              {isAuthenticated ? (
+                <>
+                  <span className="text-sm text-muted-foreground">
+                    Welcome back, {user?.fullName || user?.email || 'User'}!
+                  </span>
+                  <Button variant="outline" onClick={logout}>
+                    Logout
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button asChild variant="outline">
+                    <Link href="/login">Sign In</Link>
+                  </Button>
+                  <Button asChild>
+                    <Link href="/signup">Sign Up</Link>
+                  </Button>
+                </>
+              )}
             </div>
           </div>
         </div>

@@ -51,13 +51,11 @@ export default function DashboardPage() {
       <header className="border-b">
         <div className="container mx-auto px-4 py-6">
           <div className="flex justify-between items-center">
-            <div>
-              <h1 className="text-2xl font-bold">Dashboard</h1>
-              <p className="text-muted-foreground">
+            <h1 className="text-2xl font-bold">Dashboard</h1>
+            <div className="flex gap-2 items-center">
+              <span className="text-sm text-muted-foreground">
                 Welcome back, {user?.fullName || user?.email || 'User'}!
-              </p>
-            </div>
-            <div className="flex gap-2">
+              </span>
               <Button asChild variant="outline">
                 <Link href="/">← Back to Home</Link>
               </Button>
