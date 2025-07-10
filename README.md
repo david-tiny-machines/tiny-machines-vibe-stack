@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧱 Tiny Machines Vibe Stack
 
-## Getting Started
+A modern, modular base stack designed for **agent-supported** or **vibe-driven coding**, with **optional Supabase integration**.
 
-First, run the development server:
+## ⚡ Quick Start
 
 ```bash
+# Clone the repository
+git clone https://github.com/david-tiny-machines/tiny-machines-vibe-stack.git
+cd tiny-machines-vibe-stack
+
+# Install dependencies
+npm install
+
+# Start developing
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) and start building! 🚀
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎯 Philosophy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This stack is built for developers who want to:
+- **Move fast** without sacrificing code quality
+- **Work with AI assistants** like Claude Code or GitHub Copilot
+- **Start simple** and add complexity as needed
+- **Build modern apps** with the latest web technologies
 
-## Learn More
+### Why This Stack?
+- **Cutting-edge but stable** - Latest versions of proven technologies
+- **Optional complexity** - Supabase and advanced features are opt-in
+- **AI-optimized** - Clear structure and patterns that work well with AI tools
+- **Production-ready** - Built with best practices from day one
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Core Framework
+- **[Next.js 15](https://nextjs.org/)** - React framework with App Router *(✅ Phase 1)*
+- **[React 19](https://react.dev/)** - Latest stable release with new features *(✅ Phase 1)*
+- **[TypeScript](https://www.typescriptlang.org/)** - Type safety and better DX *(✅ Phase 1)*
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Styling & UI
+- **[Tailwind CSS 4.0](https://tailwindcss.com/)** - Utility-first CSS framework *(✅ Phase 1)*
+- **[shadcn/ui](https://ui.shadcn.com/)** - Beautiful, accessible components *(coming in Phase 4)*
+- **[Lucide Icons](https://lucide.dev/)** - Consistent icon library *(coming in Phase 4)*
 
-## Deploy on Vercel
+### State & Data
+- **[Zustand](https://zustand-demo.pmnd.rs/)** - Lightweight state management *(coming in Phase 6)*
+- **[TanStack Query](https://tanstack.com/query)** - Server state management *(coming in Phase 6)*
+- **[Supabase](https://supabase.com/)** - Optional backend (auth, database, storage) *(✅ Phase 3)*
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Developer Experience
+- **[ESLint](https://eslint.org/)** - Code linting *(✅ Phase 1)*
+- **[Turbopack](https://turbo.build/pack)** - Fast development server *(✅ Phase 1)*
+- **Path aliases** - Clean imports with `@/` *(✅ Phase 2)*
