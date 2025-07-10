@@ -60,35 +60,48 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
-        {/* Header */}
-        <div className="text-center">
-          <h1 className="text-3xl font-bold">🧱 Tiny Machines</h1>
-          <h2 className="mt-2 text-2xl font-semibold text-gray-900">
-            Create your account
-          </h2>
-          <p className="mt-2 text-sm text-gray-600">
-            Or{' '}
-            <Link 
-              href="/login" 
-              className="font-medium text-blue-600 hover:text-blue-500"
-            >
-              sign in to existing account
-            </Link>
-          </p>
-        </div>
-
-        {/* Auth Status */}
-        <div className="text-center">
-          <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
-            supabaseEnabled 
-              ? 'bg-green-100 text-green-800' 
-              : 'bg-blue-100 text-blue-800'
-          }`}>
-            {supabaseEnabled ? '🔐 Supabase Auth Enabled' : '🎭 Demo Mode'}
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <header className="border-b">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex justify-between items-center">
+            <h1 className="text-2xl font-bold">⚡ Tiny Machines</h1>
+            <Button asChild variant="outline">
+              <Link href="/">← Back to Home</Link>
+            </Button>
           </div>
         </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="flex items-center justify-center px-4 py-12">
+        <div className="max-w-md w-full space-y-8">
+          {/* Form Header */}
+          <div className="text-center">
+            <h2 className="text-3xl font-bold">
+              Create your account
+            </h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Or{' '}
+              <Link 
+                href="/login" 
+                className="font-medium text-primary hover:underline"
+              >
+                sign in to existing account
+              </Link>
+            </p>
+          </div>
+
+          {/* Auth Status */}
+          <div className="text-center">
+            <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
+              supabaseEnabled 
+                ? 'bg-green-100 text-green-800' 
+                : 'bg-blue-100 text-blue-800'
+            }`}>
+              {supabaseEnabled ? '🔐 Supabase Auth Enabled' : '🎭 Demo Mode'}
+            </div>
+          </div>
 
         {/* Signup Form */}
         <Card>
@@ -179,16 +192,8 @@ export default function SignupPage() {
           </CardContent>
         </Card>
 
-        {/* Back to Home */}
-        <div className="text-center">
-          <Link 
-            href="/" 
-            className="text-sm text-gray-600 hover:text-gray-500"
-          >
-            ← Back to home
-          </Link>
         </div>
-      </div>
+      </main>
     </div>
   )
 }
