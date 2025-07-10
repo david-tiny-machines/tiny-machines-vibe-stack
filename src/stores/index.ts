@@ -4,12 +4,12 @@
  * This file exports all Zustand stores for centralized state management.
  * 
  * Example usage:
- * import { useAuthStore, useUIStore } from '@/stores'
+ * import { useCounterStore } from '@/stores'
  */
 
-// Example store structure (will be implemented in Phase 6)
-// export { useAuthStore } from './auth-store'
-// export { useUIStore } from './ui-store'
+// Store exports
+export { useCounterStore, initializeCounterStore } from './counter-store'
+export type { CounterState } from './counter-store'
 
 /**
  * Store initialization utilities
@@ -20,16 +20,22 @@
  * Useful for testing or user logout
  */
 export function resetAllStores() {
-    // This will be implemented when we add actual stores
-    console.log('Resetting all stores...')
-  }
+  // Import the store locally to avoid circular dependency issues
+  const { useCounterStore } = require('./counter-store')
   
-  /**
-   * Store devtools configuration
-   */
-  export const storeDevtools = {
-    enabled: process.env.NODE_ENV === 'development',
-    name: 'tiny-machines-vibe-stack',
-  }
+  // Reset counter store
+  useCounterStore.getState().reset()
   
-  export {}; // Prevent TypeScript from treating this as a script
+  // Add other store resets here as you create more stores
+  console.log('All stores reset to initial state')
+}
+
+/**
+ * Store devtools configuration
+ */
+export const storeDevtools = {
+  enabled: process.env.NODE_ENV === 'development',
+  name: 'tiny-machines-vibe-stack',
+}
+
+export {}; // Prevent TypeScript from treating this as a script
