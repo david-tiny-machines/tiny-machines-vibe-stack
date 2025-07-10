@@ -58,15 +58,19 @@ export interface Database {
     }
     Views: {
       // Database views go here
+      [_ in never]: never
     }
     Functions: {
       // Database functions go here
+      [_ in never]: never
     }
     Enums: {
       // Database enums go here
+      [_ in never]: never
     }
     CompositeTypes: {
       // Composite types go here
+      [_ in never]: never
     }
   }
 }
@@ -97,12 +101,12 @@ export type User = {
   user_metadata: {
     full_name?: string
     avatar_url?: string
-    [key: string]: any
+    [key: string]: unknown
   }
   app_metadata: {
     provider?: string
     providers?: string[]
-    [key: string]: any
+    [key: string]: unknown
   }
   aud: string
   created_at: string

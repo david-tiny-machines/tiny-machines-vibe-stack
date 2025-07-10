@@ -46,7 +46,7 @@ export default function DashboardPage() {
           <CardHeader>
             <CardTitle>🎉 Authentication Working!</CardTitle>
             <CardDescription>
-              You've successfully accessed a protected route
+              You&apos;ve successfully accessed a protected route
             </CardDescription>
           </CardHeader>
           <CardContent>

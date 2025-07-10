@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useState, createElement } from 'react'
 
 // Types
 export interface User {
@@ -36,7 +36,8 @@ function getBrowserSupabaseClient() {
   if (!isSupabaseConfigured()) return null
   
   try {
-    // Dynamic import to avoid server-side issues
+    // Use require for synchronous loading in client components
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const { createBrowserClient } = require('@supabase/ssr')
     return createBrowserClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -67,7 +68,7 @@ function saveDemoUser(user: User | null) {
 }
 
 // Auth Provider using createElement
-export function AuthProvider({ children }: { children: any }) {
+export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
 
@@ -91,7 +92,7 @@ export function AuthProvider({ children }: { children: any }) {
             }
 
             // Listen for auth changes
-            supabase.auth.onAuthStateChange((event: any, session: any) => {
+            supabase.auth.onAuthStateChange((event, session) => {
               if (session?.user) {
                 setUser({
                   id: session.user.id,
@@ -127,7 +128,7 @@ export function AuthProvider({ children }: { children: any }) {
           return { success: false, error: 'Supabase not available' }
         }
 
-        const { data, error }: any = await supabase.auth.signInWithPassword({ email, password })
+        const { error } = await supabase.auth.signInWithPassword({ email, password })
         if (error) return { success: false, error: error.message }
         return { success: true }
       } else {
@@ -145,7 +146,7 @@ export function AuthProvider({ children }: { children: any }) {
           return { success: false, error: `Invalid credentials. Try: ${DEMO_EMAIL} / ${DEMO_PASSWORD}` }
         }
       }
-    } catch (error) {
+    } catch {
       return { success: false, error: 'Login failed' }
     } finally {
       setLoading(false)
@@ -162,7 +163,7 @@ export function AuthProvider({ children }: { children: any }) {
           return { success: false, error: 'Supabase not available' }
         }
 
-        const { error }: any = await supabase.auth.signUp({
+        const { error } = await supabase.auth.signUp({
           email,
           password,
           options: { data: { full_name: fullName } },
@@ -180,7 +181,7 @@ export function AuthProvider({ children }: { children: any }) {
         saveDemoUser(demoUser)
         return { success: true }
       }
-    } catch (error) {
+    } catch {
       return { success: false, error: 'Signup failed' }
     } finally {
       setLoading(false)
@@ -214,7 +215,6 @@ export function AuthProvider({ children }: { children: any }) {
   }
 
   // Use createElement to avoid JSX type issues
-  const { createElement } = require('react')
   return createElement(AuthContext.Provider, { value }, children)
 }
 

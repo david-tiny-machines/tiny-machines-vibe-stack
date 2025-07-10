@@ -1,4 +1,4 @@
-# 🧱 Tiny Machines Vibe Stack
+# ⚡ Tiny Machines Vibe Stack
 
 **A complete web application starter that gets your product from idea to production in hours, not weeks.**
 
@@ -27,9 +27,9 @@ Perfect for product managers who want to move fast, validate ideas quickly, and 
 ## 🚀 **Get Started in 3 Steps**
 
 ```bash
-# 1. Clone and setup
-git clone https://github.com/your-username/tiny-machines-vibe-stack.git
-cd tiny-machines-vibe-stack
+# 1. Clone and setup (replace "my-awesome-project" with your actual project name)
+git clone https://github.com/david-tiny-machines/tiny-machines-vibe-stack.git my-awesome-project
+cd my-awesome-project
 npm install
 
 # 2. Start developing
@@ -37,6 +37,8 @@ npm run dev
 
 # 3. Open http://localhost:3000 and start building!
 ```
+
+> **💡 Tip:** Replace `my-awesome-project` with your actual project name (e.g., `my-saas-app`, `company-dashboard`, `blog-platform`, etc.)
 
 **That's it.** You now have a fully working web application with:
 - ✅ User authentication (demo mode included)

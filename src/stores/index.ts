@@ -21,6 +21,7 @@ export type { CounterState } from './counter-store'
  */
 export function resetAllStores() {
   // Import the store locally to avoid circular dependency issues
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const { useCounterStore } = require('./counter-store')
   
   // Reset counter store

@@ -39,7 +39,7 @@ export type FormHookReturn<T> = {
     values: T
     errors: Partial<Record<keyof T, string>>
     touched: Partial<Record<keyof T, boolean>>
-    handleChange: (field: keyof T, value: any) => void
+    handleChange: (field: keyof T, value: unknown) => void
     handleSubmit: (onSubmit: (values: T) => void) => (e: React.FormEvent) => void
     reset: () => void
 }
