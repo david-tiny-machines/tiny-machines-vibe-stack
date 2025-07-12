@@ -26,8 +26,8 @@ Perfect for founders and developers who want to leverage AI to build faster than
 - **Cursor** ($20/month) + **Claude Pro** ($20/month with Claude Code)
 - Best balance of AI IDE + terminal AI for most developers
 
-**Power Vibe: $120/month**
-- **Cursor** ($20/month) + **Claude Max** ($100/month)
+**Power Vibe: $220/month**
+- **Cursor** ($20/month) + **Claude Max** ($200/month)
 - For heavy coding on large codebases (1000+ lines)
 
 > **Note:** Pricing as of July 2025. AI tool pricing changes frequently - check current rates at [cursor.com](https://cursor.com) and [claude.ai/pricing](https://claude.ai/pricing)
@@ -77,6 +77,120 @@ npm run dev
 
 ---
 
+## 🤖 **Vibe Coding Workflow**
+
+This stack includes a **Plan → Build → Ship** workflow optimized for AI-assisted development with Claude Code.
+
+### **Get Claude Code**
+```bash
+# Install Claude Code (requires Claude Pro/Max subscription)
+# Visit claude.ai/code for installation instructions
+```
+
+### **The Three-Command Workflow**
+
+**🎯 Start with Planning:**
+```bash
+# In your project directory
+claude
+
+# Plan your feature
+/plan "user dashboard with real-time analytics and task management"
+```
+
+**⚡ Build Incrementally:**
+```bash
+# Execute tasks one by one with quality validation
+/build dashboard
+/build dashboard  # Repeat until all tasks complete
+/build dashboard
+```
+
+**🚀 Ship When Ready:**
+```bash
+# Deploy and capture learnings
+/ship dashboard
+```
+
+### **What This Gives You**
+
+**🎯 Smart Planning**
+- AI breaks down features into concrete, actionable tasks
+- Automatic scope management (3-15 tasks based on complexity)  
+- Technical architecture decisions built-in
+
+**⚡ Quality-First Building**
+- Every task includes automated validation
+- TypeScript + ESLint + Vitest + Playwright integration
+- Mobile responsive and accessible by default
+
+**🚀 Production-Ready Shipping** 
+- Comprehensive testing before deployment
+- Self-improving documentation (CLAUDE.md evolves)
+- Deployment-ready for Vercel, Netlify, etc.
+
+### **Perfect For**
+
+**Product Managers & Founders**
+```bash
+/plan "subscription billing flow with Stripe integration"
+# → Working prototype in 2-4 hours
+# → Ready for user testing and feedback
+```
+
+**Startup Teams**
+```bash
+/plan "customer support chat widget with AI responses"  
+# → MVP in days, not weeks
+# → Production-ready with real backend
+```
+
+**Solo Developers & Consultants**
+```bash
+/plan "e-commerce admin dashboard with inventory management"
+# → Professional client deliverable
+# → Complete with documentation
+```
+
+### **Example: Building an Invoice System**
+
+```bash
+# 1. Plan (30 seconds)
+/plan "invoice generator with PDF export for small business"
+
+# Creates planning/invoice-generator.md with:
+# - [ ] Setup invoice data structure and forms
+# - [ ] Build professional invoice preview UI  
+# - [ ] Implement PDF generation with branding
+# - [ ] Add invoice management (save/edit/delete)
+# - [ ] Testing and mobile responsive polish
+
+# 2. Build (2-3 hours)
+/build invoice-generator  # Task 1: Data structure ✅
+/build invoice-generator  # Task 2: Preview UI ✅  
+/build invoice-generator  # Task 3: PDF export ✅
+/build invoice-generator  # Task 4: Management ✅
+/build invoice-generator  # Task 5: Polish ✅
+
+# 3. Ship (15 minutes)
+/ship invoice-generator
+# → Live invoice system ready for customers
+# → CLAUDE.md updated with new patterns
+# → Planning docs archived with learnings
+```
+
+### **Built-in Quality Pipeline**
+
+Every `/build` command runs:
+- ✅ TypeScript compilation
+- ✅ ESLint with zero warnings  
+- ✅ Vitest unit tests
+- ✅ Manual browser testing
+- ✅ Mobile responsive check
+- ✅ Accessibility validation
+
+---
+
 ## 🛠️ **Development Commands**
 
 ```bash
@@ -84,6 +198,15 @@ npm run dev          # Start development server (with Turbopack)
 npm run build        # Build for production
 npm run start        # Start production server
 npm run lint         # Run ESLint checks
+```
+
+### **Testing Commands**
+```bash
+npm run test         # Run Vitest in watch mode
+npm run test:run     # Run all unit tests once
+npm run test:ui      # Open Vitest UI in browser
+npx playwright test  # Run E2E tests
+npm run validate     # Run all quality checks
 ```
 
 ### **Common Development Tasks**
@@ -172,7 +295,12 @@ src/
 ├── lib/
 │   ├── supabase/          # Database client
 │   └── react-query/       # Query configuration
-└── stores/                # Zustand state stores
+├── stores/                # Zustand state stores
+└── test/                  # Test setup files
+
+tests/                     # E2E Playwright tests
+planning/                  # AI project plans
+.claude/commands/          # Plan → Build → Ship commands
 ```
 
 ---
@@ -211,10 +339,10 @@ This stack is optimized for working with AI coding assistants like Claude Code:
 
 ### **Example Prompts That Work Great:**
 ```
-"Add a user profile page with avatar upload"
-"Create a subscription billing flow with Stripe"
-"Build an admin dashboard with user analytics"
-"Add email notifications using Resend"
+/plan "user profile page with avatar upload"
+/plan "subscription billing flow with Stripe"  
+/plan "admin dashboard with user analytics"
+/plan "email notifications using Resend"
 ```
 
 ### **AI Development Tips:**
@@ -236,6 +364,8 @@ This stack is optimized for working with AI coding assistants like Claude Code:
 | **Zustand** | Client state | Simple, performant, TypeScript-first |
 | **TanStack Query** | Server state | Smart caching, optimistic updates |
 | **Supabase** | Backend | Auth, database, real-time features |
+| **Vitest** | Unit testing | Fast, modern alternative to Jest |
+| **Playwright** | E2E testing | Cross-browser, reliable automation |
 
 ---
 
@@ -297,6 +427,8 @@ npm run build
 - State management patterns
 - TypeScript throughout
 - Production deployment ready
+- Plan → Build → Ship AI workflow
+- Comprehensive testing setup
 
 ### **🚧 Coming Soon**
 - Email integration examples

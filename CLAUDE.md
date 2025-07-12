@@ -1,10 +1,18 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
 ## Project Overview
 
-This is the **Tiny Machines Vibe Stack** - a Next.js 15 + React 19 + Tailwind CSS 4.0 + Supabase starter designed for rapid product development and AI-assisted coding. The stack includes authentication, UI components, state management, and is optimized for working with AI coding assistants.
+This is the **Tiny Machines Vibe Stack** - a Next.js 15 + React 19 + Tailwind CSS 4.0 + Supabase starter designed for rapid product development and AI-assisted coding. The stack includes authentication, UI components, state management, comprehensive testing, and is optimized for working with AI coding assistants.
+
+## 🤖 Planning Workflow Commands
+- `/plan [description]` - Create project plan with task breakdown
+- `/build [project-name]` - Execute next task with validation
+- `/ship [project-name]` - Complete and deploy project
+
+## 🔄 Development Flow
+```
+Plan → Build → Ship
+```
 
 ## Development Commands
 
@@ -13,6 +21,18 @@ This is the **Tiny Machines Vibe Stack** - a Next.js 15 + React 19 + Tailwind CS
 - `npm run build` - Build production bundle
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint checks
+
+### Testing Commands
+- `npm run test` - Run Vitest in watch mode
+- `npm run test:run` - Run all unit tests once
+- `npm run test:ui` - Open Vitest UI in browser
+- `npx playwright test` - Run E2E tests
+- `npx playwright test --headed` - Run E2E tests with browser visible
+- `npx playwright show-report` - View E2E test results
+
+### Quality Pipeline
+- `npm run type-check` - TypeScript validation
+- `npm run validate` - Run all checks (type-check + lint + test:run)
 
 ### Demo Authentication
 - **Demo Login**: `demo@example.com` / `password`
@@ -47,6 +67,12 @@ The project uses a hybrid state management approach:
 - **Tailwind CSS 4.0**: Latest version with improved performance
 - **Design Tokens**: Uses CSS variables for theming
 - **Component Location**: `/src/components/ui/` for base components
+
+### Testing Architecture
+- **Unit/Component Tests**: Vitest + React Testing Library
+- **E2E Tests**: Playwright with cross-browser support
+- **Test Location**: Unit tests alongside components, E2E tests in `/tests/`
+- **Quality Gates**: All tests must pass before task completion
 
 ### Data Layer Structure
 ```
@@ -93,17 +119,35 @@ The auth system automatically detects if Supabase is configured and falls back t
 - CSS variables in `globals.css` for design tokens
 - Component variants with `class-variance-authority`
 
-## Testing and Quality
+### Testing Standards
+- **Unit Tests**: Test components, hooks, and utilities in isolation
+- **Integration Tests**: Test component interactions and data flow
+- **E2E Tests**: Test complete user workflows across browsers
+- **Test Coverage**: Aim for meaningful coverage, not just percentages
 
-### Available Scripts
-- Lint checks: `npm run lint`
-- No test framework is currently configured
-- ESLint configuration includes TanStack Query rules
+## Quality Standards
 
-### Code Quality Tools
-- **ESLint**: Configured with Next.js and TanStack Query rules
-- **TypeScript**: Strict mode enabled
-- **Prettier**: Not configured (consider adding)
+### Required for Every Task
+- [ ] TypeScript compiles without errors
+- [ ] ESLint passes with zero warnings
+- [ ] Tests written and passing
+- [ ] JSDoc documentation for exports
+- [ ] Manual testing in browser
+- [ ] Mobile responsive design
+
+### Testing Requirements
+- [ ] Unit tests for new components/hooks
+- [ ] E2E tests for new user flows
+- [ ] Error handling tested
+- [ ] Loading states tested
+- [ ] Edge cases covered
+
+## 🚫 Forbidden Practices
+- **NEVER use `any` type** - use proper TypeScript
+- **NEVER skip tests** for new features  
+- **NEVER trust external data** without Zod validation
+- **NEVER exceed 200 lines** per component
+- **NEVER ship without running quality pipeline**
 
 ## Deployment Notes
 
@@ -124,15 +168,36 @@ Required for production Supabase auth:
 2. Use the established authentication flow
 3. Follow the component organization structure
 4. Maintain the dual-mode (demo/production) approach
+5. Write tests for new functionality
+
+### Planning Workflow
+1. **Always start with `/plan`** - No exceptions
+2. **Use `/build`** for incremental implementation
+3. **Complete with `/ship`** when ready for users
+4. **Update this CLAUDE.md** with new patterns discovered
 
 ### Common Tasks
 - **Adding protected routes**: Place in `(protected)` route group
 - **Adding UI components**: Use shadcn/ui patterns in `/src/components/ui/`
 - **Adding API calls**: Create TanStack Query hooks in `/src/hooks/queries/`
 - **Adding client state**: Create Zustand stores in `/src/stores/`
+- **Adding tests**: Unit tests alongside components, E2E tests in `/tests/`
 
 ### File Naming Conventions
 - React components: PascalCase (e.g., `UserProfile.tsx`)
 - Hooks: camelCase starting with "use" (e.g., `useUserData.ts`)
 - Utilities: camelCase (e.g., `formatDate.ts`)
 - Stores: kebab-case with "-store" suffix (e.g., `user-store.ts`)
+- Tests: Same as source file with `.test.tsx` or `.spec.ts` suffix
+
+## Project Structure
+```
+├── .claude/commands/         # Claude Code slash commands
+├── planning/                 # Project planning documents
+│   └── completed/            # Archived completed projects
+├── src/                      # Application source code
+├── tests/                    # E2E Playwright tests
+├── tests-examples/           # Playwright examples and reference
+├── docs/                     # Generated documentation
+└── Configuration files       # All tools pre-configured
+```
