@@ -72,7 +72,7 @@ When checking off tasks, add implementation details:
 - **Component Docs**: Create in `/docs/components/` for reusable components
 - **API Docs**: Document new hooks/utilities in `/docs/api/`
 - **README Updates**: Only for major architectural changes
-- **CLAUDE.md**: DO NOT update - keep focused on project conventions
+- **CLAUDE.md**: Already updated by plan command - no further changes needed
 
 ## Task Completion:
 Task is only marked complete when:

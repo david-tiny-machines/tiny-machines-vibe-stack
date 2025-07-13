@@ -92,7 +92,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             }
 
             // Listen for auth changes
-            supabase.auth.onAuthStateChange((event, session) => {
+            supabase.auth.onAuthStateChange((_event: string, session: { user?: { id: string; email?: string; user_metadata?: { full_name?: string; avatar_url?: string } } } | null) => {
               if (session?.user) {
                 setUser({
                   id: session.user.id,

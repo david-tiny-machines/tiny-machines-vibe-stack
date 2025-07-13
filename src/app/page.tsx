@@ -102,7 +102,7 @@ export default function Home() {
                 <div className="bg-slate-900 text-green-400 p-4 rounded-lg font-mono text-sm">
                   <div className="space-y-1">
                     <div><span className="text-blue-400">claude</span> <span className="text-gray-400"># Start Claude Code</span></div>
-                    <div><span className="text-yellow-400">/plan</span> "invoice generator with PDF export"</div>
+                    <div><span className="text-yellow-400">/plan</span> &quot;invoice generator with PDF export&quot;</div>
                     <div><span className="text-yellow-400">/build</span> invoice-generator</div>
                     <div><span className="text-yellow-400">/ship</span> invoice-generator</div>
                     <div className="text-gray-400 mt-2"># 🎉 Working invoice system in hours!</div>
@@ -143,7 +143,7 @@ export default function Home() {
                     <div className="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-bold">1</div>
                     <div>
                       <p className="font-medium">Plan the Feature</p>
-                      <p className="text-sm text-muted-foreground">AI analyzes "user dashboard with analytics" and creates 5-8 concrete tasks</p>
+                      <p className="text-sm text-muted-foreground">AI analyzes &quot;user dashboard with analytics&quot; and creates 5-8 concrete tasks</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -171,7 +171,7 @@ export default function Home() {
             {/* What's Included */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">✅ What's Included</CardTitle>
+                <CardTitle className="text-lg">✅ What&apos;s Included</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-center gap-2 text-sm">

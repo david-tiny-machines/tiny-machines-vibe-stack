@@ -64,15 +64,15 @@ This stack includes a structured **Plan → Build → Ship** workflow for AI-ass
 claude
 
 # Plan what you want to build
-/plan "subscription billing dashboard with Stripe integration"
+/plan "walking tour add-on prototype for travel booking flow to test if customers will book tours during hotel checkout vs planning separately later"
 
 # Build it step by step with AI validation
-/build billing-dashboard  # Repeat until all tasks complete
-/build billing-dashboard
-/build billing-dashboard
+/build walking-tour-addon  # Repeat until all tasks complete
+/build walking-tour-addon
+/build walking-tour-addon
 
 # Ship when ready
-/ship billing-dashboard
+/ship walking-tour-addon
 ```
 
 ### **What This Gives You**
