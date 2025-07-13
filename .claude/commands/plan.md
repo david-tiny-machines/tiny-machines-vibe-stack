@@ -8,14 +8,16 @@ Create implementation plan for: $ARGUMENTS
 3. **Simple project document** to guide development
 4. **Updated CLAUDE.md** to reflect the new project context
 
-## Project Type Detection:
-First, identify what type of project this is:
+## ⚠️ CRITICAL: Project Type Detection
+
+**IMPORTANT:** First, identify what type of project this is:
 
 ### **Prototype** (Keywords: prototype, test, validate, concept, proof-of-concept, demo)
 - **Purpose**: Validate concepts and gather feedback
 - **Users**: Internal stakeholders, limited user testing (5-10 people)
 - **Timeline**: Hours to days
 - **Success**: Answers "Should we build this?" and "How should it work?"
+- **⚠️ WARNING**: NO A/B testing, analytics, or production infrastructure!
 
 ### **MVP** (Keywords: launch, ship, customers, market, users, beta)
 - **Purpose**: Ship to real users for market validation
@@ -41,11 +43,13 @@ First, identify what type of project this is:
 Break the work into concrete, actionable tasks based on project type:
 
 **For Prototypes (3-5 tasks, focus on validation):**
-- [ ] **Task 1**: Core user flow implementation with mock data
-- [ ] **Task 2**: Basic UI/UX for concept demonstration
-- [ ] **Task 3**: Demo scenarios and user testing setup
-- [ ] **Task 4**: Stakeholder presentation materials
-- [ ] **Task 5**: Feedback collection and iteration plan
+**🚫 ABSOLUTELY NO: A/B testing, analytics, conversion tracking, or production infrastructure!**
+**✅ FOCUS ON: Building both concepts to demonstrate and compare**
+- [ ] **Task 1**: Build Concept A (e.g., checkout add-on flow) with mock data
+- [ ] **Task 2**: Build Concept B (e.g., separate planning flow) with mock data  
+- [ ] **Task 3**: Create demo presentation showing both concepts side-by-side
+- [ ] **Task 4**: Simple user testing setup (5-10 people, qualitative feedback)
+- [ ] **Task 5**: Stakeholder feedback collection and next steps recommendation
 
 **For MVPs (5-8 tasks, focus on shipping):**
 - [ ] **Task 1**: Authentication and user management
@@ -89,28 +93,34 @@ Break the work into concrete, actionable tasks based on project type:
 
 ### Project-Specific Guidelines:
 
-#### **Prototype Guidelines:**
-**AVOID:**
-- A/B testing frameworks
-- Complex analytics/tracking
-- Performance optimization
-- Scalability architecture
-- Production deployment pipelines
-- User authentication (unless core to concept)
-- Payment processing (use mock/demo)
-- Complex error handling
-- SEO optimization
-- Production monitoring
+#### **🚫 PROTOTYPE GUIDELINES - ABSOLUTELY CRITICAL:**
+**NEVER INCLUDE FOR PROTOTYPES (even if mentioned in description):**
+- ❌ A/B testing frameworks or infrastructure
+- ❌ Analytics dashboards or conversion tracking
+- ❌ User routing based on test groups
+- ❌ Statistical significance testing
+- ❌ Session recording or behavior analytics
+- ❌ Production metrics or monitoring
+- ❌ Performance optimization
+- ❌ Scalability architecture
+- ❌ Production deployment pipelines
+- ❌ User authentication (unless core to concept)
+- ❌ Payment processing (use mock/demo)
+- ❌ Complex error handling
+- ❌ SEO optimization
 
-**FOCUS ON:**
-- Core user experience
-- Concept validation
-- Stakeholder demos
-- Simple user testing (5-10 people)
+**⚠️ PROTOTYPES ARE FOR CONCEPT VALIDATION, NOT OPTIMIZATION**
+
+**✅ FOCUS ON:**
+- Building both concepts to demonstrate them
+- Stakeholder demos showing each approach
+- Simple user testing with 5-10 people asking "which do you prefer?"
 - Technical feasibility proof
 - Working demo with mock data
-- Clear user flows
+- Clear user flows for each concept
 - Visual design that communicates the concept
+- Qualitative feedback collection (surveys, interviews)
+- Side-by-side comparison for stakeholders
 
 #### **MVP Guidelines:**
 **AVOID:**
