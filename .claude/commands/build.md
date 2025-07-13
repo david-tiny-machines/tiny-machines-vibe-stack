@@ -15,8 +15,15 @@ Execute next task from: $ARGUMENTS
    - `npm run type-check` - TypeScript passes
    - `npm run test:run` - Unit tests pass
    - `npm run dev` - Manual verification
-5. **Update the plan** - Check off completed task
-6. **Update CLAUDE.md** - Document new patterns, components, or architectural decisions
+5. **Update the plan** with implementation details:
+   - Check off completed task
+   - Add "Implemented:" section with what was built
+   - List files created/modified
+   - Note any architectural decisions made
+6. **Create documentation** (if new patterns established):
+   - Add component docs to `/docs/components/` if new reusable components
+   - Update README.md if major architectural changes
+   - Create API docs in `/docs/api/` if new utilities/hooks
 7. **Commit changes** with clear message
 
 ## Quality Gates (All Must Pass):
@@ -36,18 +43,50 @@ Execute next task from: $ARGUMENTS
 - Add proper TypeScript types
 - Include JSDoc documentation for exports
 
+## Enhanced Planning Document Updates:
+When checking off tasks, add implementation details:
+
+```markdown
+- [x] **Task 1**: Create tour data models and mock tour database ✅
+  **Implemented:**
+  - Created `src/types/tour.ts` with comprehensive Tour interface
+  - Built `src/stores/tour-store.ts` with Zustand store
+  - Added 15 sample walking tours across 5 cities
+  - Includes tour filtering and search functionality
+  
+  **Files Created:**
+  - `src/types/tour.ts` - TypeScript interfaces
+  - `src/stores/tour-store.ts` - State management
+  - `src/lib/mock-tours.ts` - Sample data
+  
+  **Tests Added:**
+  - `src/stores/__tests__/tour-store.test.ts` - Store functionality
+  
+  **Patterns Established:**
+  - Zustand store pattern for entity management
+  - Mock data structure for prototype testing
+```
+
+## Documentation Strategy:
+- **Planning Document**: Update with implementation details and progress
+- **Component Docs**: Create in `/docs/components/` for reusable components
+- **API Docs**: Document new hooks/utilities in `/docs/api/`
+- **README Updates**: Only for major architectural changes
+- **CLAUDE.md**: DO NOT update - keep focused on project conventions
+
 ## Task Completion:
 Task is only marked complete when:
 - All validation gates pass
 - Functionality works as specified
 - Code meets quality standards
-- Plan is updated with progress
+- Plan is updated with implementation details
+- Appropriate documentation created
 - If using phases: Phase completion noted when all phase tasks done
-
-Focus: **One task at a time, done properly**
 
 ## Handling Phases:
 - Work through tasks sequentially across phases
 - Complete Phase 1 before moving to Phase 2
 - Update plan to show phase progress
 - Consider shipping/demo at end of each phase
+
+Focus: **One task at a time, done properly, documented clearly**

@@ -6,6 +6,7 @@ Create implementation plan for: $ARGUMENTS
 1. **High-level overview** of what we're building and why
 2. **Task breakdown** with 5-8 concrete tasks
 3. **Simple project document** to guide development
+4. **Updated CLAUDE.md** to reflect the new project context
 
 ## Planning Document Structure:
 
@@ -51,12 +52,33 @@ Example structures:
 - Patterns to follow from vibe stack
 - Dependencies and integrations needed
 
+## CLAUDE.md Updates:
+When creating the plan, update CLAUDE.md to reflect the specific project:
+
+### Replace generic vibe stack description with:
+- **Project purpose** and business context
+- **Key architecture decisions** for this specific prototype
+- **Project-specific constraints** and requirements
+- **Custom workflows** if any established
+- **Domain-specific patterns** to follow
+
+### Keep existing sections:
+- Available planning commands (`/plan`, `/build`, `/ship`)
+- Quality gates and validation requirements
+- Core development patterns from vibe stack
+
 ## Task Structure:
 Each task should be:
 - **Clear and actionable** - developer knows what to do
 - **Testable** - can verify when it's complete
 - **Atomic** - can be completed in 1-2 hours
 - **Progressive** - builds on previous tasks
+
+## Process:
+1. **Understand the project** from the description
+2. **Create planning document** at `planning/{project-name}.md`
+3. **Update CLAUDE.md** with project-specific context
+4. **Commit the plan** with clear message
 
 Save as `planning/{project-name}.md`
 
