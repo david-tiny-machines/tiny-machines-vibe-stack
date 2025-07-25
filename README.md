@@ -82,6 +82,57 @@ claude
 
 ---
 
+## 📋 **Planning with Product Requirements Documents (PRDs)**
+
+For complex projects or formal product development, you can create detailed Product Requirements Documents and use them directly with the vibe coding workflow.
+
+### **Create a PRD**
+
+**Option 1: Use External Template** ⭐ **Recommended**
+If you don't have a PRD format preference, we recommend this comprehensive template:
+**[Professional PRD Template](https://vibecodx.dev/guides/requirements-template)**
+
+**Option 2: Use Our Template**
+```bash
+# Copy the template
+cp docs/requirements/template.md docs/requirements/my-feature.md
+
+# Edit with your specific requirements
+# Then plan directly from the PRD
+/plan docs/requirements/my-feature.md
+```
+
+### **PRD Structure for Vibe Coding**
+
+Your PRD should include:
+- **Functional Requirements** with clear features
+- **Acceptance Criteria** for each feature
+- **User Stories** in standard format
+- **Success Metrics** for validation
+
+### **PRD-to-Code Workflow**
+
+```bash
+# 1. Create detailed PRD
+/plan docs/requirements/user-dashboard.md
+
+# 2. Build incrementally from PRD
+/build user-dashboard
+/build user-dashboard  
+/build user-dashboard
+
+# 3. Ship when PRD requirements met
+/ship user-dashboard
+```
+
+### **PRD Benefits**
+- **Stakeholder Alignment**: Clear requirements before development
+- **Scope Management**: Prevents feature creep during development  
+- **Quality Validation**: Built-in acceptance criteria for testing
+- **Documentation**: Permanent record of product decisions
+
+---
+
 ## ✅ **What You Get Out of the Box**
 
 ### **Immediate Value**
