@@ -22,7 +22,7 @@ Perfect for product managers who want to validate ideas with working prototypes 
 - Cursor ($40/month) + Claude Max ($200/month)
 - For complex prototypes and heavy usage
 
-> Pricing as of July 2025 - check current rates at respective websites
+> Pricing are in NZD and are as of July 2025 - check current rates at respective websites for local currencies
 
 ## 🚀 **Quick Start (2 minutes)**
 
@@ -88,27 +88,18 @@ For complex projects or formal product development, you can create detailed Prod
 
 ### **Create a PRD**
 
-**Option 1: Use External Template** ⭐ **Recommended**
+**Option 1: Use External Template**
 If you don't have a PRD format preference, we recommend this comprehensive template:
 **[Professional PRD Template](https://vibecodx.dev/guides/requirements-template)**
 
-**Option 2: Use Our Template**
+**Option 2: Use an existing PRD**
+Claude Code (and all LLMs) love markdown files - learn more about them here:
+**[Markdown Guide](https://www.markdownguide.org/)**
 ```bash
-# Copy the template
-cp docs/requirements/template.md docs/requirements/my-feature.md
-
-# Edit with your specific requirements
-# Then plan directly from the PRD
+# Convert your PRD into markdown format and then place in the docs/requirements folder
+# Then plan directly from it
 /plan docs/requirements/my-feature.md
 ```
-
-### **PRD Structure for Vibe Coding**
-
-Your PRD should include:
-- **Functional Requirements** with clear features
-- **Acceptance Criteria** for each feature
-- **User Stories** in standard format
-- **Success Metrics** for validation
 
 ### **PRD-to-Code Workflow**
 
