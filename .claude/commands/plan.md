@@ -4,7 +4,7 @@ Create implementation plan for: $ARGUMENTS
 
 ## Input Handling:
 - **Direct Description**: `/plan "feature description"`
-- **PRD File**: `/plan docs/requirements/my-prd.md`
+- **PRD File**: `/plan docs/requirements/{prd-name}.md`
 - **Auto-detect**: Check if argument is a file path vs description
 
 ## PRD File Processing:
@@ -28,19 +28,18 @@ Create a planning document at `planning/{project-name}.md` with this structure:
 - **What**: Clear description of what we're building
 - **Why**: Business value and user impact  
 - **Type**: [Prototype/MVP/Feature]
-- **Source**: [Direct input / PRD: docs/requirements/filename.md]
+- **Source**: [Direct input / PRD: docs/requirements/{prd-name}.md]
 - **Success Criteria**: How we'll know it's working
 
 ## Requirements Summary (if from PRD)
 - **Original PRD**: [Link to source PRD file]
 - **Key Features**: [Extracted from PRD functional requirements]
-- **User Stories**: [Primary user stories from PRD]
 - **Acceptance Criteria**: [High-level acceptance criteria]
 
 ## Task Breakdown
-- [ ] **Task 1**: Clear, actionable description (1-2 hours)
-- [ ] **Task 2**: Clear, actionable description (1-2 hours)
-- [ ] **Task 3**: Clear, actionable description (1-2 hours)
+- [ ] **Task 1**: Clear, actionable description
+- [ ] **Task 2**: Clear, actionable description
+- [ ] **Task 3**: Clear, actionable description
 
 ## Technical Notes
 - Key architectural decisions
@@ -48,13 +47,11 @@ Create a planning document at `planning/{project-name}.md` with this structure:
 - **Existing Components**: Use Button, Card, Input, Label from `/src/components/ui/`
 - **Available Libraries**: Zustand, TanStack Query, shadcn/ui, Tailwind CSS
 - Dependencies and integrations needed
-- **Avoid**: Installing duplicate components or starting new dev servers
 
 ## Implementation Guidelines
 - **Component Strategy**: Use existing shadcn/ui components where possible
 - **State Management**: Zustand for client state, TanStack Query for server state
 - **Testing**: Unit tests with Vitest, E2E with Playwright
-- **Dev Environment**: Reuse existing dev server if running on port 3000
 ```
 
 ## PRD Integration Template:
@@ -62,7 +59,7 @@ When planning from a PRD, include this additional section:
 
 ```markdown
 ## PRD Mapping
-- **Original Document**: [docs/requirements/filename.md]
+- **Original Document**: [docs/requirements/{prd-name}.md]
 - **Features Implemented**: 
   - [ ] [Feature 1 from PRD] → Task 1, Task 2
   - [ ] [Feature 2 from PRD] → Task 3, Task 4
@@ -76,7 +73,7 @@ When planning from a PRD, include this additional section:
 - **Use checkboxes** (required for `/build` command)
 - **For prototypes**: Focus on concept validation, avoid A/B testing or analytics
 - **For complex projects**: Use phases to organize many tasks
-- **Keep tasks atomic**: Each task should be completable in 1-2 hours
+- **Keep tasks atomic**: Each task should be achievable within one context window
 - **Prioritize existing resources**: Don't install what's already available
 - **Reference source**: Always link back to original PRD if applicable
 
@@ -95,36 +92,24 @@ Before planning, note existing components to avoid unnecessary installations:
 
 ### Phase 2: Core Features
 - [ ] **Task 3**: Main functionality
-- [ ] **Task 4**: Integration work (check for existing patterns)
+- [ ] **Task 4**: Integration work
 
 ### Phase 3: Polish & Testing
 - [ ] **Task 5**: Testing and validation
 - [ ] **Task 6**: Documentation and deployment
 ```
 
-## Directory Setup:
-Ensure these directories exist:
-- `planning/` - For planning documents
-- `docs/requirements/` - For PRD files
-- `docs/components/` - For component documentation
-- `docs/api/` - For API documentation
-
 ## Post-Planning Actions:
 1. **Update CLAUDE.md** with project-specific context
-2. **Create PRD template** if none exists at `docs/requirements/template.md`
+2. **Create a PRD** using `docs/requirements/template.md` if starting from PRD workflow
 3. **Note existing resources** to avoid redundant installations
 4. **Set implementation strategy** based on available vibe stack components
-
-## PRD Template Reference:
-If no PRD format preference, refer users to:
-- **Template**: `docs/requirements/template.md` 
-- **Online Guide**: https://vibecodx.dev/guides/requirements-template
 
 Example PRD creation flow:
 ```bash
 # 1. Create PRD from template
-cp docs/requirements/template.md docs/requirements/my-feature.md
+cp docs/requirements/template.md docs/requirements/kitchen-assistant.md
 # 2. Fill out PRD with specific requirements
 # 3. Plan from PRD
-/plan docs/requirements/my-feature.md
+/plan docs/requirements/kitchen-assistant.md
 ```

@@ -3,7 +3,7 @@
 Execute next task from: $ARGUMENTS
 
 ## Process:
-1. **Read the plan** from `planning/{project-name}.md` OR `docs/requirements/{project-name}.md`
+1. **Read the plan** from `planning/$ARGUMENTS.md`
 2. **Find next unchecked task** in the task breakdown (across all phases if using phases)
 3. **Pre-implementation checks**:
    - Check if dev server is already running on port 3000
@@ -35,7 +35,7 @@ Execute next task from: $ARGUMENTS
 - **ALWAYS check existing components first** in `/src/components/ui/`
 - **Only install new shadcn/ui components if needed** and not already present
 - **Use this command to check**: `ls src/components/ui/` before any `npx shadcn@latest add` commands
-- **Existing components available**:
+- **Examples of Existing components available**:
   - Button (`button.tsx`)
   - Card (`card.tsx`) 
   - Input (`input.tsx`)
@@ -71,19 +71,15 @@ Execute next task from: $ARGUMENTS
 - ✅ Tests pass with adequate coverage
 - ✅ Feature works correctly in browser
 - ✅ Follows vibe stack patterns
-- ✅ Uses existing components where possible
 - ✅ Mobile responsive
 - ✅ Proper error handling
 
 ## Implementation Guidelines:
-- **PRIORITY: Use existing shadcn/ui components** from `/src/components/ui/`
-- **Check component availability** before installing new ones
 - Follow established file structure in `src/`
 - Keep components under 200 lines
 - Handle loading, error, and empty states
 - Add proper TypeScript types
 - Include JSDoc documentation for exports
-- **Reuse existing patterns** from the vibe stack
 
 ## Enhanced Planning Document Updates:
 When checking off tasks, add implementation details:
@@ -112,27 +108,17 @@ When checking off tasks, add implementation details:
   - Mock data structure for prototype testing
 ```
 
-## PRD Integration:
-- **Accept PRD files** from `docs/requirements/` folder
-- **Parse PRD format** and extract features for task breakdown
-- **Link implementation** back to original requirements
-- **Update PRD** with implementation status if requested
-
 ## Documentation Strategy:
 - **Planning Document**: Update with implementation details and progress
 - **Component Docs**: Create in `/docs/components/` for reusable components
 - **API Docs**: Document new hooks/utilities in `/docs/api/`
-- **Requirements Docs**: Link back to original PRD in `/docs/requirements/`
 - **README Updates**: Only for major architectural changes
-- **CLAUDE.md**: Already updated by plan command - no further changes needed
 
 ## Task Completion:
 Task is only marked complete when:
 - All validation gates pass
 - Functionality works as specified
 - Code meets quality standards
-- **Used existing components** where possible (no unnecessary installations)
-- **Reused existing dev server** if running
 - Plan is updated with implementation details
 - Appropriate documentation created
 - If using phases: Phase completion noted when all phase tasks done
@@ -143,4 +129,4 @@ Task is only marked complete when:
 - Update plan to show phase progress
 - Consider shipping/demo at end of each phase
 
-Focus: **One task at a time, done properly, documented clearly, using existing resources efficiently**
+Focus: **One task at a time, done properly, documented clearly**

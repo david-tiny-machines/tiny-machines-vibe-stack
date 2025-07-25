@@ -3,7 +3,7 @@
 Complete and deploy: $ARGUMENTS
 
 ## Final Validation:
-1. **Verify all tasks complete** in `planning/{project-name}.md`
+1. **Verify all tasks complete** in `planning/$ARGUMENTS.md`
    - All phases completed (if using phases)
    - All tasks checked off
 2. **Run comprehensive validation**:
@@ -35,16 +35,8 @@ Complete and deploy: $ARGUMENTS
    - Document environment setup
    - Add usage instructions
 
-2. **Update CLAUDE.md with learnings**:
-   - Add new patterns discovered during development
-   - Update architectural guidance based on what worked
-   - Capture performance insights and optimizations
-   - Document any new dependencies or tools used
-   - Add successful component patterns to examples
-   - Update troubleshooting section with issues encountered
-
-3. **Archive planning documents**:
-   - Move `planning/{project-name}.md` to `planning/completed/`
+2. **Archive planning documents**:
+   - Move `planning/$ARGUMENTS.md` to `planning/completed/`
    - Include final notes and lessons learned
    - Update project changelog
 
