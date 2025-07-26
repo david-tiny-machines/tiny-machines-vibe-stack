@@ -100,10 +100,9 @@ Before planning, note existing components to avoid unnecessary installations:
 ```
 
 ## Post-Planning Actions:
-1. **Update CLAUDE.md** with project-specific context
-2. **Create a PRD** using `docs/requirements/template.md` if starting from PRD workflow
-3. **Note existing resources** to avoid redundant installations
-4. **Set implementation strategy** based on available vibe stack components
+1. **Create a PRD** using `docs/requirements/template.md` if starting from PRD workflow
+2. **Note existing resources** to avoid redundant installations
+3. **Set implementation strategy** based on available vibe stack components
 
 Example PRD creation flow:
 ```bash

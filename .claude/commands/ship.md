@@ -46,6 +46,11 @@ Complete and deploy: $ARGUMENTS
    - Document environment setup for the new project
    - Add usage instructions for the built features
 
+2. **Update project documentation**:
+   - Update README.md with project-specific overview (replace vibe stack content)
+   - Document environment setup for the new project
+   - Add usage instructions for the built features
+
 2. **Archive planning documents**:
    - Move `planning/$ARGUMENTS.md` to `planning/completed/`
    - Include final notes and lessons learned
