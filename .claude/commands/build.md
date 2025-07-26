@@ -81,6 +81,12 @@ Execute next task from: $ARGUMENTS
 - Add proper TypeScript types
 - Include JSDoc documentation for exports
 
+## Testing Requirements:
+- **Unit Tests**: Use Vitest (NOT Jest) with React Testing Library
+- **Test Files**: Place alongside components with `.test.tsx` suffix
+- **Setup**: Import from `@/test/setup.ts` for test utilities
+- **Commands**: Use `npm run test:run` for CI, `npm run test` for watch mode
+
 ## Enhanced Planning Document Updates:
 When checking off tasks, add implementation details:
 

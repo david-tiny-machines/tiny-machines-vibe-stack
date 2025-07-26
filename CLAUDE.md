@@ -154,6 +154,7 @@ The auth system automatically detects if Supabase is configured and falls back t
 - **NEVER trust external data** without Zod validation
 - **NEVER exceed 200 lines** per component
 - **NEVER ship without running quality pipeline**
+- **NEVER use Jest** - use Vitest for all unit testing
 
 ## Deployment Notes
 
