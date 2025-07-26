@@ -34,9 +34,13 @@ Perfect for product managers who want to validate ideas with working prototypes 
 
 ### **Setup**
 ```bash
-# 1. Clone the repo (replace "my-project" with your actual project name)
+# 1. Clone and disconnect from original repo
 git clone https://github.com/david-tiny-machines/tiny-machines-vibe-stack.git my-project
 cd my-project
+rm -rf .git
+git init
+git add .
+git commit -m "Initial commit from Tiny Machines Vibe Stack"
 
 # 2. Install dependencies
 npm install

@@ -18,9 +18,20 @@ Complete and deploy: $ARGUMENTS
    - Check bundle size
 
 2. **Deploy to live environment**:
-   - Deploy to Vercel/Netlify
-   - Configure custom domain (if applicable)
-   - Set up environment variables
+   - Set up GitHub repository (if not already connected):
+     ```bash
+     # Check if already connected to a remote
+     if ! git remote get-url origin > /dev/null 2>&1; then
+       echo "Setting up GitHub repository..."
+       # Create and push to new GitHub repo (requires gh CLI and login)
+       gh repo create $ARGUMENTS --public --push
+     else
+       echo "Repository already connected to $(git remote get-url origin)"
+       git push
+     fi
+     ```
+   - Deploy to Vercel/Netlify from GitHub
+   - Configure environment variables
    - Test live deployment
 
 3. **Post-deployment verification**:
@@ -31,9 +42,9 @@ Complete and deploy: $ARGUMENTS
 
 ## Documentation Update:
 1. **Project documentation**:
-   - Update README with deployment info
-   - Document environment setup
-   - Add usage instructions
+   - Update README with project-specific information (replace vibe stack content)
+   - Document environment setup for the new project
+   - Add usage instructions for the built features
 
 2. **Archive planning documents**:
    - Move `planning/$ARGUMENTS.md` to `planning/completed/`
