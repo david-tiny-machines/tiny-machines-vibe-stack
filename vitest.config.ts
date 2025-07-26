@@ -7,6 +7,11 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
+    exclude: [
+      '**/node_modules/**',
+      '**/tests/**',        // Exclude Playwright tests
+      '**/tests-examples/**' // Exclude Playwright examples
+    ]
   },
   resolve: {
     alias: {
