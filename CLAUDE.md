@@ -48,6 +48,12 @@ Plan → Build → Ship
   - `(protected)/` - Protected dashboard and user areas
 - **TypeScript Path Mapping**: `@/*` maps to `./src/*`
 
+### Adding Protected Routes
+- **Always use the `(protected)` route group** for authenticated pages
+- **Example**: New dashboard page goes in `src/app/(protected)/my-feature/page.tsx`
+- **Authentication**: The route group automatically applies auth checking via layout
+- **Pattern**: Follow existing pages like `dashboard` and `state-demo`
+
 ### State Management Architecture
 The project uses a hybrid state management approach:
 
