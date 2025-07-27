@@ -19,7 +19,7 @@ If argument is a PRD file path:
 4. **Reference original PRD** in the planning document
 
 ## Instructions:
-Create a planning document at `planning/{project-name}.md` with this structure:
+Create a planning document at `planning/$ARGUMENTS.md` with this structure:
 
 ```markdown
 # Project Name
@@ -37,9 +37,32 @@ Create a planning document at `planning/{project-name}.md` with this structure:
 - **Acceptance Criteria**: [High-level acceptance criteria]
 
 ## Task Breakdown
+Choose ONE structure based on project complexity:
+
+**For Simple Projects (3-5 tasks):**
+```markdown
+## Task Breakdown
 - [ ] **Task 1**: Clear, actionable description
 - [ ] **Task 2**: Clear, actionable description
 - [ ] **Task 3**: Clear, actionable description
+```
+
+**For Complex Projects (6+ tasks):**
+```markdown
+## Phase Structure
+
+### Phase 1: Foundation
+- [ ] **Task 1**: Setup work (use existing components)
+- [ ] **Task 2**: Basic structure
+
+### Phase 2: Core Features
+- [ ] **Task 3**: Main functionality
+- [ ] **Task 4**: Integration work
+
+### Phase 3: Polish & Testing
+- [ ] **Task 5**: Testing and validation
+- [ ] **Task 6**: Documentation and deployment
+```
 
 ## Technical Notes
 - Key architectural decisions
@@ -71,8 +94,10 @@ When planning from a PRD, include this additional section:
 
 ## Key Guidelines:
 - **Use checkboxes** (required for `/build` command)
+- **Choose ONE structure**: Either flat tasks OR phases, never both
 - **For prototypes**: Focus on concept validation, avoid A/B testing or analytics
-- **For complex projects**: Use phases to organize many tasks
+- **For complex projects**: Use phases to organize many tasks (6+)
+- **For simple projects**: Use flat task list (3-5 tasks)
 - **Keep tasks atomic**: Each task should be achievable within one context window
 - **Prioritize existing resources**: Don't install what's already available
 - **Reference source**: Always link back to original PRD if applicable
@@ -85,6 +110,8 @@ Before planning, note existing components to avoid unnecessary installations:
 - ✅ Label (`src/components/ui/label.tsx`)
 
 ## Phase Structure (for complex projects):
+**Use this structure instead of flat tasks for projects with 6+ tasks:**
+
 ```markdown
 ### Phase 1: Foundation
 - [ ] **Task 1**: Setup work (use existing components)
@@ -99,10 +126,11 @@ Before planning, note existing components to avoid unnecessary installations:
 - [ ] **Task 6**: Documentation and deployment
 ```
 
+**Important**: Choose EITHER flat tasks OR phases - never use both in the same plan.
+
 ## Post-Planning Actions:
-1. **Create a PRD** using `docs/requirements/template.md` if starting from PRD workflow
-2. **Note existing resources** to avoid redundant installations
-3. **Set implementation strategy** based on available vibe stack components
+1. **Note existing resources** to avoid redundant installations
+2. **Set implementation strategy** based on available vibe stack components
 
 Example PRD creation flow:
 ```bash
