@@ -8,29 +8,31 @@ export default function Home() {
   const { isAuthenticated, logout, user } = useAuth()
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+    <div className="min-h-screen bg-black text-green-400 font-mono">
       {/* Header */}
       <header className="absolute top-0 left-0 right-0 z-10">
         <div className="container mx-auto px-8 py-6">
           <div className="flex justify-between items-center">
-            <h1 className="text-xl font-medium text-slate-300">⚡ Tiny Machines Vibe Stack</h1>
+            <pre className="text-sm text-green-300">
+{`⚡ TINY_MACHINES_VIBE_STACK v1.0`}
+            </pre>
             <div className="flex gap-3 items-center">
               {isAuthenticated ? (
                 <>
-                  <span className="text-sm text-slate-400">
-                    Welcome back, {user?.fullName || user?.email || 'User'}!
+                  <span className="text-xs text-green-600 font-mono">
+                    {`> user: ${user?.fullName || user?.email || 'guest'}`}
                   </span>
-                  <Button variant="outline" onClick={logout} className="border-slate-600 text-slate-300 hover:bg-slate-700">
-                    Logout
+                  <Button variant="outline" onClick={logout} className="border-green-500 text-green-400 hover:bg-green-900 font-mono text-xs">
+                    [LOGOUT]
                   </Button>
                 </>
               ) : (
                 <>
-                  <Button asChild className="bg-slate-700 hover:bg-slate-600 text-white border-0">
-                    <Link href="/login">Sign In</Link>
+                  <Button asChild className="bg-green-800 hover:bg-green-700 text-green-100 border-0 font-mono text-xs">
+                    <Link href="/login">[SIGN_IN]</Link>
                   </Button>
-                  <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white">
-                    <Link href="/signup">Sign Up</Link>
+                  <Button asChild className="bg-green-600 hover:bg-green-500 text-black font-mono text-xs">
+                    <Link href="/signup">[SIGN_UP]</Link>
                   </Button>
                 </>
               )}
@@ -39,120 +41,288 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Main Content - Centered Slide */}
-      <div className="flex items-center justify-center min-h-screen px-8 pt-32 pb-20">
-        <div className="max-w-6xl mx-auto text-center space-y-20">
+      {/* Main Content - ASCII Art Style */}
+      <div className="flex items-center justify-center min-h-screen px-4 pt-32 pb-20">
+        <div className="max-w-7xl mx-auto text-center space-y-16">
           
-          {/* Main Heading */}
-          <div className="space-y-10">
-            <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
-              Master Context Engineering
-            </h1>
-          </div>
+          {/* ASCII Art Main Heading */}
+          <div className="space-y-8">
+            <pre className="text-sm md:text-base lg:text-lg text-green-400 leading-tight">
+{`
+███╗   ███╗ █████╗ ███████╗████████╗███████╗██████╗ 
+████╗ ████║██╔══██╗██╔════╝╚══██╔══╝██╔════╝██╔══██╗
+██╔████╔██║███████║███████╗   ██║   █████╗  ██████╔╝
+██║╚██╔╝██║██╔══██║╚════██║   ██║   ██╔══╝  ██╔══██╗
+██║ ╚═╝ ██║██║  ██║███████║   ██║   ███████╗██║  ██║
+╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
 
-          {/* Context Engineering Framework */}
-          <div className="space-y-16">
-            <div className="flex items-center justify-center gap-4">
-              <span className="text-4xl">🧠</span>
-              <h2 className="text-3xl font-semibold text-white">Three-Part Context Engineering Framework</h2>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-16 max-w-5xl mx-auto">
-              <div className="space-y-6 p-8 rounded-2xl bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 hover:bg-slate-800/40 transition-all duration-300">
-                <div className="text-6xl">🧱</div>
-                <h3 className="text-2xl font-semibold text-white">Building Blocks</h3>
-                <p className="text-slate-300 text-lg">(Tech stack, quality gates)</p>
-              </div>
-              
-              <div className="space-y-6 p-8 rounded-2xl bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 hover:bg-slate-800/40 transition-all duration-300">
-                <div className="text-6xl">🌊</div>
-                <h3 className="text-2xl font-semibold text-white">Workflow</h3>
-                <p className="text-slate-300 text-lg">(How to build, session memory)</p>
-              </div>
-              
-              <div className="space-y-6 p-8 rounded-2xl bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 hover:bg-slate-800/40 transition-all duration-300">
-                <div className="text-6xl">🎯</div>
-                <h3 className="text-2xl font-semibold text-white">Task Context</h3>
-                <p className="text-slate-300 text-lg">(Customer + business need)</p>
-              </div>
+ ██████╗ ██████╗ ███╗   ██╗████████╗███████╗██╗  ██╗████████╗
+██╔════╝██╔═══██╗████╗  ██║╚══██╔══╝██╔════╝╚██╗██╔╝╚══██╔══╝
+██║     ██║   ██║██╔██╗ ██║   ██║   █████╗   ╚███╔╝    ██║   
+██║     ██║   ██║██║╚██╗██║   ██║   ██╔══╝   ██╔██╗    ██║   
+╚██████╗╚██████╔╝██║ ╚████║   ██║   ███████╗██╔╝ ██╗   ██║   
+ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═╝   ╚═╝   
+
+███████╗███╗   ██╗ ██████╗ ██╗███╗   ██╗███████╗███████╗██████╗ ██╗███╗   ██╗ ██████╗ 
+██╔════╝████╗  ██║██╔════╝ ██║████╗  ██║██╔════╝██╔════╝██╔══██╗██║████╗  ██║██╔════╝ 
+█████╗  ██╔██╗ ██║██║  ███╗██║██╔██╗ ██║█████╗  █████╗  ██████╔╝██║██╔██╗ ██║██║  ███╗
+██╔══╝  ██║╚██╗██║██║   ██║██║██║╚██╗██║██╔══╝  ██╔══╝  ██╔══██╗██║██║╚██╗██║██║   ██║
+███████╗██║ ╚████║╚██████╔╝██║██║ ╚████║███████╗███████╗██║  ██║██║██║ ╚████║╚██████╔╝
+╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ 
+`}
+            </pre>
+            <div className="text-xl md:text-2xl text-green-400 tracking-wide font-semibold">
+              From idea to working software in hours, not weeks
             </div>
           </div>
 
-          {/* Call to Action */}
+          {/* Three-Part Framework in ASCII */}
           <div className="space-y-12">
-            <p className="text-2xl text-slate-200">
-              👇 Try it live or follow along during the demo.
-            </p>
+            <pre className="text-green-300 text-base md:text-lg">
+{`
+╔══════════════════════════════════════════════════════════════════════════════════════╗
+║  🧠 THREE-PART CONTEXT ENGINEERING FRAMEWORK                                        ║
+╚══════════════════════════════════════════════════════════════════════════════════════╝
+`}
+            </pre>
             
-            <div className="flex gap-6 justify-center flex-wrap">
-              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200">
-                <Link href="/dashboard">📝 Protected Route Demo</Link>
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              <div className="space-y-4">
+                <pre className="text-green-400 text-sm md:text-base leading-tight border border-green-600 p-6 bg-green-950/20 h-80 flex items-center justify-center">
+{`
+╔═══════════════════════╗
+║    BUILDING BLOCKS    ║
+╠═══════════════════════╣
+║                       ║
+║   ███  ███  ███       ║
+║   ███  ███  ███       ║
+║   ███  ███  ███       ║
+║                       ║
+║ Tech stack, quality   ║
+║ gates & foundations   ║
+║                       ║
+║ [TypeScript][Next.js] ║
+║ [Tailwind][Supabase]  ║
+║                       ║
+╚═══════════════════════╝
+`}
+                </pre>
+              </div>
+              
+              <div className="space-y-4">
+                <pre className="text-green-400 text-sm md:text-base leading-tight border border-green-600 p-6 bg-green-950/20 h-80 flex items-center justify-center">
+{`
+╔═══════════════════════╗
+║      WORKFLOW         ║
+╠═══════════════════════╣
+║                       ║
+║    ┌──────┐           ║
+║    │ PLAN │           ║
+║    └───┬──┘           ║
+║        │              ║
+║    ┌───▼──┐   ┌─────┐ ║
+║    │BUILD │──▶│SHIP │ ║
+║    └──────┘   └─────┘ ║
+║                       ║
+║ How to build, session ║
+║ memory & processes    ║
+║                       ║
+╚═══════════════════════╝
+`}
+                </pre>
+              </div>
+              
+              <div className="space-y-4">
+                <pre className="text-green-400 text-sm md:text-base leading-tight border border-green-600 p-6 bg-green-950/20 h-80 flex items-center justify-center">
+{`
+╔═══════════════════════╗
+║    TASK CONTEXT       ║
+╠═══════════════════════╣
+║                       ║
+║        🎯             ║
+║    ╔═══════════╗      ║
+║    ║ CUSTOMER  ║      ║
+║    ║   NEED    ║      ║
+║    ╚═════╤═════╝      ║
+║          │            ║
+║    ╔═════▼═════╗      ║
+║    ║ BUSINESS  ║      ║
+║    ║   GOAL    ║      ║
+║    ╚═══════════╝      ║
+║                       ║
+╚═══════════════════════╝
+`}
+                </pre>
+              </div>
+            </div>
+          </div>
+
+          {/* Call to Action in ASCII Style */}
+          <div className="space-y-8">
+            <div className="flex gap-4 justify-center flex-wrap">
+              <Button asChild size="lg" className="bg-green-700 hover:bg-green-600 text-green-100 px-8 py-3 font-mono text-sm border border-green-500">
+                <Link href="/dashboard">[PROTECTED_ROUTE_DEMO]</Link>
               </Button>
-              <Button asChild size="lg" className="bg-slate-700 hover:bg-slate-600 text-white border-0 px-12 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-200">
-                <Link href="/state-demo">📦 State Management Demo</Link>
+              <Button asChild size="lg" className="bg-green-800 hover:bg-green-700 text-green-100 border border-green-600 px-8 py-3 font-mono text-sm">
+                <Link href="/state-demo">[STATE_MGMT_DEMO]</Link>
               </Button>
-              <Button asChild size="lg" className="bg-slate-700 hover:bg-slate-600 text-white border-0 px-12 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-200">
-                <Link href="https://github.com/david-tiny-machines/tiny-machines-vibe-stack" target="_blank">📚 Repo on GitHub</Link>
+              <Button asChild size="lg" className="bg-green-800 hover:bg-green-700 text-green-100 border border-green-600 px-8 py-3 font-mono text-sm">
+                <Link href="https://github.com/david-tiny-machines/tiny-machines-vibe-stack" target="_blank">[GITHUB_REPO]</Link>
               </Button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Tech Stack Footer */}
-      <footer className="bg-slate-900/80 border-t border-slate-700/50 backdrop-blur-sm">
-        <div className="max-w-6xl mx-auto px-8 py-16">
-          <div className="text-center space-y-12">
-            <h3 className="text-3xl font-semibold text-white">✅ What's Included</h3>
+      {/* ASCII Tech Stack Footer */}
+      <footer className="bg-black border-t border-green-600 font-mono">
+        <div className="max-w-7xl mx-auto px-4 py-12">
+          <div className="text-center space-y-8">
+            <pre className="text-green-300 text-base md:text-lg">
+{`
+╔════════════════════════════════════════════════════════════════════════════════════╗
+║                              ✅ TECH_STACK_INCLUDED                               ║
+╚════════════════════════════════════════════════════════════════════════════════════╝
+`}
+            </pre>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <div className="group p-6 rounded-2xl bg-gradient-to-br from-slate-800/60 to-slate-800/30 border border-slate-700/50 backdrop-blur-sm hover:border-blue-500/50 hover:from-slate-800/80 hover:to-slate-800/50 transition-all duration-300 hover:scale-105">
-                <div className="space-y-2">
-                  <div className="text-blue-400 font-semibold text-sm uppercase tracking-wider">Frontend</div>
-                  <div className="text-white font-medium text-lg leading-tight">Next.js 15 + React 19</div>
-                </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              <div className="border border-green-600 bg-green-950/10 p-6">
+                <pre className="text-green-400 text-sm md:text-base leading-tight">
+{`
+┌─────────────────────┐
+│    [FRONTEND]       │
+├─────────────────────┤
+│                     │
+│  ┌─────┐  ┌─────┐   │
+│  │NEXT │  │REACT│   │
+│  │ 15  │  │ 19  │   │
+│  └─────┘  └─────┘   │
+│                     │
+│  Modern web stack   │
+│  with RSC support   │
+└─────────────────────┘
+`}
+                </pre>
               </div>
               
-              <div className="group p-6 rounded-2xl bg-gradient-to-br from-slate-800/60 to-slate-800/30 border border-slate-700/50 backdrop-blur-sm hover:border-purple-500/50 hover:from-slate-800/80 hover:to-slate-800/50 transition-all duration-300 hover:scale-105">
-                <div className="space-y-2">
-                  <div className="text-purple-400 font-semibold text-sm uppercase tracking-wider">Backend</div>
-                  <div className="text-white font-medium text-lg leading-tight">Authentication<br/><span className="text-slate-300 text-base">(demo + Supabase)</span></div>
-                </div>
+              <div className="border border-green-600 bg-green-950/10 p-6">
+                <pre className="text-green-400 text-sm md:text-base leading-tight">
+{`
+┌─────────────────────┐
+│     [BACKEND]       │
+├─────────────────────┤
+│                     │
+│    🔐 AUTH SYSTEM   │
+│  ┌─────────────────┐│
+│  │   SUPABASE     ││
+│  │      +         ││
+│  │   DEMO MODE    ││
+│  └─────────────────┘│
+│                     │
+│  Dual auth strategy │
+└─────────────────────┘
+`}
+                </pre>
               </div>
               
-              <div className="group p-6 rounded-2xl bg-gradient-to-br from-slate-800/60 to-slate-800/30 border border-slate-700/50 backdrop-blur-sm hover:border-amber-500/50 hover:from-slate-800/80 hover:to-slate-800/50 transition-all duration-300 hover:scale-105">
-                <div className="space-y-2">
-                  <div className="text-amber-400 font-semibold text-sm uppercase tracking-wider">UI</div>
-                  <div className="text-white font-medium text-lg leading-tight">shadcn/ui +<br/>Tailwind CSS 4</div>
-                </div>
+              <div className="border border-green-600 bg-green-950/10 p-6">
+                <pre className="text-green-400 text-sm md:text-base leading-tight">
+{`
+┌─────────────────────┐
+│       [UI]          │
+├─────────────────────┤
+│                     │
+│  ╔═══════════════╗  │
+│  ║   shadcn/ui   ║  │
+│  ╚═══════════════╝  │
+│         +           │
+│  ╔═══════════════╗  │
+│  ║ TAILWIND CSS4 ║  │
+│  ╚═══════════════╝  │
+│                     │
+│  Component library  │
+└─────────────────────┘
+`}
+                </pre>
               </div>
               
-              <div className="group p-6 rounded-2xl bg-gradient-to-br from-slate-800/60 to-slate-800/30 border border-slate-700/50 backdrop-blur-sm hover:border-emerald-500/50 hover:from-slate-800/80 hover:to-slate-800/50 transition-all duration-300 hover:scale-105">
-                <div className="space-y-2">
-                  <div className="text-emerald-400 font-semibold text-sm uppercase tracking-wider">State Management</div>
-                  <div className="text-white font-medium text-lg leading-tight">Zustand +<br/>TanStack Query</div>
-                </div>
+              <div className="border border-green-600 bg-green-950/10 p-6">
+                <pre className="text-green-400 text-sm md:text-base leading-tight">
+{`
+┌─────────────────────┐
+│   [STATE_MGMT]      │
+├─────────────────────┤
+│                     │
+│   ZUSTAND STORE     │
+│    ┌───────────┐    │
+│    │   STATE   │    │
+│    └─────┬─────┘    │
+│          │          │
+│   ┌──────▼──────┐   │
+│   │TANSTACK QUERY│   │
+│   └─────────────┘   │
+│                     │
+│  Client + Server    │
+└─────────────────────┘
+`}
+                </pre>
               </div>
               
-              <div className="group p-6 rounded-2xl bg-gradient-to-br from-slate-800/60 to-slate-800/30 border border-slate-700/50 backdrop-blur-sm hover:border-rose-500/50 hover:from-slate-800/80 hover:to-slate-800/50 transition-all duration-300 hover:scale-105">
-                <div className="space-y-2">
-                  <div className="text-rose-400 font-semibold text-sm uppercase tracking-wider">Testing</div>
-                  <div className="text-white font-medium text-lg leading-tight">Vitest +<br/>Playwright Testing</div>
-                </div>
+              <div className="border border-green-600 bg-green-950/10 p-6">
+                <pre className="text-green-400 text-sm md:text-base leading-tight">
+{`
+┌─────────────────────┐
+│     [TESTING]       │
+├─────────────────────┤
+│                     │
+│    ┌─────────────┐  │
+│    │   VITEST    │  │
+│    │  (Unit/IT)  │  │
+│    └─────────────┘  │
+│          +          │
+│    ┌─────────────┐  │
+│    │ PLAYWRIGHT  │  │
+│    │    (E2E)    │  │
+│    └─────────────┘  │
+│                     │
+│  Full test coverage │
+└─────────────────────┘
+`}
+                </pre>
               </div>
               
-              <div className="group p-6 rounded-2xl bg-gradient-to-br from-slate-800/60 to-slate-800/30 border border-slate-700/50 backdrop-blur-sm hover:border-cyan-500/50 hover:from-slate-800/80 hover:to-slate-800/50 transition-all duration-300 hover:scale-105">
-                <div className="space-y-2">
-                  <div className="text-cyan-400 font-semibold text-sm uppercase tracking-wider">Language</div>
-                  <div className="text-white font-medium text-lg leading-tight">TypeScript<br/>throughout</div>
-                </div>
+              <div className="border border-green-600 bg-green-950/10 p-6">
+                <pre className="text-green-400 text-sm md:text-base leading-tight">
+{`
+┌─────────────────────┐
+│    [LANGUAGE]       │
+├─────────────────────┤
+│                     │
+│   ████████████████  │
+│   █ TYPESCRIPT   █  │
+│   █              █  │
+│   █  End-to-End  █  │
+│   █   Type Safe  █  │
+│   █              █  │
+│   ████████████████  │
+│                     │
+│  100% TypeScript    │
+└─────────────────────┘
+`}
+                </pre>
               </div>
             </div>
             
-            <div className="pt-8 border-t border-slate-700/30">
-              <p className="text-slate-400 text-lg italic">
-                Built for product people who want to move fast and build things that matter.
-              </p>
+            <div className="pt-8 border-t border-green-600">
+              <pre className="text-green-500 text-base md:text-lg">
+{`
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│ > Built for product people who want to move fast and build things that matter  │
+│ > Optimized for AI-assisted development and rapid prototyping                  │
+└─────────────────────────────────────────────────────────────────────────────────┘
+`}
+              </pre>
             </div>
           </div>
         </div>
