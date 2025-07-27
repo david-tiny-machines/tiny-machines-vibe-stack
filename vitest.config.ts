@@ -7,6 +7,7 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
+    globals: true,  // This makes expect globally available
     exclude: [
       '**/node_modules/**',
       '**/tests/**',        // Exclude Playwright tests
