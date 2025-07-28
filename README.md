@@ -1,4 +1,4 @@
-# Tiny Machines Vibe Stack
+# ⚡️ Tiny Machines Vibe Stack
 ## Context Engineering Framework for AI-Powered Development
 
 **Transform product ideas into working software in hours, not weeks**
