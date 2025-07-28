@@ -98,7 +98,7 @@ npm run dev
 ### Start Context Engineering
 
 ```bash
-# Start Claude Code (reads CLAUDE.md automatically)
+# Start Claude Code (reads CLAUDE.md automatically - this is Part 1: Building Blocks)
 claude
 
 # Plan your first project (Part 3: Task Context)
